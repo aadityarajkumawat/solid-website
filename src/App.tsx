@@ -35,26 +35,26 @@ const App: Component = () => {
             <img class={`m-auto relative main-anim-in`} src={main} alt='' />
             {/* <div class='relative shade-over-main shade-anim-in'></div> */}
             <div
-              class='text-center absolute bg-black w-screen left-0 bottom-0 py-5'
+              class='text-center absolute bg-black w-full left-0 bottom-0 py-5'
               style={{ top: '55%' }}
             >
               <div
-                class='w-1/2 m-auto mb-10 md:w-2/3 lg:w-1/2 2xl:w-1/3'
-                style={{ 'min-width': '450px' }}
+                class='w-1/2 m-auto mb-10 md:w-2/3 lg:w-1/2 2xl:w-1/3 px-10'
+                style={{ 'min-width': '400px' }}
               >
-                <p class='text-lg mb-5 max-sm:text-base'>
+                <p class='text-lg mb-5 max-sm:text-sm'>
                   Logging in college's WiFi every now and then could be annoying
                   at times, especially when you need to type in credentials each
                   time.
                 </p>
-                <p class='text-lg max-sm:text-base'>
+                <p class='text-lg max-sm:text-sm'>
                   So, here is a solution for our university Wi-Fi, a tool that
                   will keep you logged in forever, so don't have to the annoying
                   login anymore.
                 </p>
               </div>
 
-              <button class='bg-blue-600 rounded-md py-4 px-24'>
+              <button class='bg-blue-600 rounded-md py-3 px-20'>
                 Coming Soon
               </button>
             </div>
