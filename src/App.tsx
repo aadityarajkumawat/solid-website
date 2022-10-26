@@ -1,26 +1,34 @@
-import { Component, createSignal } from 'solid-js'
+import { Component, createEffect, createSignal } from 'solid-js'
 import './index.css'
 import main from './assets/main.png'
 
 const Footer: Component = () => {
   return (
-    <div class='bg-grey fixed py-1 text-center bottom-0 w-screen'>
+    <a
+      class='bg-grey fixed py-1 text-center bottom-0 w-screen'
+      href='https://github.com/aadityarajkumawat'
+      target='__blank'
+    >
       <p class='text-sm text-grey1 cursor-pointer'>
         developed by @aadityarajkumawat 🚀
       </p>
-    </div>
+    </a>
   )
 }
 
 const App: Component = () => {
   const [page, setPage] = createSignal('jwifi')
+  const [loaded, setLoaded] = createSignal(false)
 
   return (
     <div class='bg-black'>
       <div class='flex flex-col items-end w-full px-20 py-10'>
         <div
           class={`text-white underline cursor-pointer`}
-          onClick={() => setPage(page() === 'jwifi' ? 'wtf?' : 'jwifi')}
+          onClick={() => {
+            setPage(page() === 'jwifi' ? 'wtf?' : 'jwifi')
+            setLoaded(true)
+          }}
         >
           {page() === 'jwifi' ? 'wtf?' : 'jwifi'}
         </div>
@@ -32,7 +40,11 @@ const App: Component = () => {
           <p class='text-lg text-grey1'>no more logging into Wi-Fi</p>
 
           <div class='w-full relative flex'>
-            <img class={`m-auto relative main-anim-in`} src={main} alt='' />
+            <img
+              class={`m-auto relative ${!loaded() ? 'main-anim-in' : ''}`}
+              src={main}
+              alt=''
+            />
             {/* <div class='relative shade-over-main shade-anim-in'></div> */}
             <div
               class='text-center absolute bg-black w-full left-0 bottom-0 py-5'
