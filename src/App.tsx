@@ -13,7 +13,7 @@ const Footer: Component = () => {
 }
 
 const App: Component = () => {
-  const [page, setPage] = createSignal('wtf?')
+  const [page, setPage] = createSignal('jwifi')
 
   return (
     <div class='bg-black'>
